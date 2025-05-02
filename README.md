@@ -15,15 +15,34 @@ If you live in a multi-tenant building, Techem might be the provider for water a
 > This project is not affiliated with Techem in any shape or form.
 > The backend might change any time, so use at your own risk.
 
+
+## --help
+```
+usage: techem.py [-h] [-B] [-u USERNAME] [-p PASSWORD]
+
+Scrapes consumption data (Verbrauchsinfo) from Techem website
+
+options:
+  -h, --help            show this help message and exit
+  -B, --browser
+  -u, --username USERNAME
+  -p, --password PASSWORD
+```
+
 ## How to use
 
 Have Python 3.x and the [MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-python) python library installed.
 
+Either, you provide your login to the script, which will then use selenium and chrome headless to log You in:
 
-You need to be logged out of the mieter.techem.de portal in your browser (no active session), then run
+```
+./techem-eed-scraper.py -u email@example.com -p mysecurepassword
+```
+
+or You need to be logged out of the mieter.techem.de portal in your browser (no active session) and run
 
 ``` 
-./techem.py
+./techem.py -B
 ``` 
 
 ## How it works
